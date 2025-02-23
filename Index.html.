@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download do Script Roblox</title>
+</head>
+<body>
+    <h1>Baixe o Script Roblox</h1>
+    <p>Este script pode ser usado no Roblox. Clique no link abaixo para baixá-lo.</p>
+    
+    <!-- Link para o download do script -->
+    <a href="caminho/para/o/script.lua" download="meu_script.lua">
+        Clique aqui para baixar o script
+    </a>
+
+</body>
+</html>
