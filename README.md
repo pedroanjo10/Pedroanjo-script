@@ -1,3 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download do Script Roblox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        .btn-download {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .btn-download:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Baixe o Script Roblox</h1>
+    <p>Este é o script que você pode usar no Roblox. Clique no link abaixo para baixá-lo.</p>
+
+    <!-- Link para o download do script -->
+    <a href="caminho/para/o/script.lua" download="meu_script.lua" class="btn-download">Baixar Script</a>
+    
+    <hr>
+
+    <h2>Ou copie o código:</h2>
+    <pre style="background-color: #e9ecef; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word;">
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 
@@ -32,15 +75,16 @@ end
 
 -- Função para ativar a modificação das hitboxes
 local function modifyHitboxes()
-    -- Aumentar a hitbox do próprio jogador para 1 e deixá-la visível
+    -- Aumentar a hitbox do próprio jogador para 1 e deixá-la visível, sem colisão
     for _, v in pairs(character:GetChildren()) do
         if v:IsA("BasePart") then
             v.Size = Vector3.new(1, 1, 1)
             v.Transparency = 0 -- Torna a hitbox visível para o próprio jogador
+            v.CanCollide = false -- Remover a colisão das hitboxes
         end
     end
 
-    -- Definir hitbox dos outros jogadores como 1000 e invisível para eles
+    -- Definir hitbox dos outros jogadores como 1000 e invisível para eles, sem colisão
     for _, otherPlayer in pairs(game.Players:GetPlayers()) do
         if otherPlayer ~= player then
             local otherCharacter = otherPlayer.Character
@@ -49,6 +93,7 @@ local function modifyHitboxes()
                     if v:IsA("BasePart") then
                         v.Size = Vector3.new(1000, 1000, 1000)
                         v.Transparency = 1 -- Torna a hitbox invisível para os outros jogadores
+                        v.CanCollide = false -- Remover a colisão das hitboxes dos outros
                     end
                 end
             end
@@ -133,3 +178,6 @@ showNotification()
 
 -- Mensagem inicial no console
 print("Funções ativadas automaticamente.")
+    </pre>
+</body>
+</html>
